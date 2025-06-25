@@ -1,0 +1,245 @@
+.navbar {
+  background-color: #000000;
+  width: 100%;
+  padding: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Classes to hide/show navbar based on scroll */
+.navbar-visible {
+  transform: translateY(0);
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Navigation links - Desktop */
+.nav-links-desktop {
+  display: flex;
+  gap: 24px;
+  margin-left: 2.5rem;
+}
+
+.nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.5;
+  padding: 8px 0;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0; /* Changed from 50% to 0 to start from the left */
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(0); /* Removed -50% to prevent displacement */
+  opacity: 0;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Action buttons - Desktop */
+.nav-buttons-desktop {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.btn-new-members {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 10px 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-login {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Hover styles now come from button-styles.css */
+
+/* Hover styles now come from button-styles.css */
+
+/* Mobile menu button */
+.mobile-menu-button {
+  display: none;
+  margin-left: auto;
+}
+
+.mobile-menu-button button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.9) 100%);
+  padding: 24px;
+  display: none;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mobile-nav-link {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+}
+
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.mobile-nav-buttons .btn-new-members,
+.mobile-nav-buttons .btn-login {
+  width: 100%;
+  box-sizing: border-box;
+  transition: none;
+  transform: none;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .nav-links-desktop, .nav-buttons-desktop {
+    display: none;
+  }
+  
+  .mobile-menu-button {
+    display: block;
+  }
+  
+  .navbar-container {
+    justify-content: space-between;
+  }
+  
+  /* Disable hover effects on mobile */
+  .btn-new-members:hover,
+  .btn-login:hover {
+    background-color: inherit;
+    box-shadow: none;
+  }
+  
+  .mobile-nav-buttons .btn-new-members:hover {
+    background-color: #ffffff;
+    transform: none;
+  }
+  
+  .mobile-nav-buttons .btn-login:hover {
+    background-color: transparent;
+    transform: none;
+  }
+}

@@ -1,0 +1,19 @@
+/* Reusable button hover effect styles */
+.smooth-hover-btn {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.smooth-hover-btn:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f3f3f3;
+}
+
+/* For transparent buttons with borders */
+.smooth-hover-btn-outline {
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.smooth-hover-btn-outline:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
+}

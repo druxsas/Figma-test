@@ -1,0 +1,259 @@
+/* Carousel Section */
+.carousel-section {
+  width: 100%;
+  background-color: transparent;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+/* Carousel Slides */
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering of slide content */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.carousel-slide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Carousel Card Container */
+.carousel-card-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  box-sizing: border-box;
+  padding: 0 10%;
+}
+
+/* Carousel Card */
+.carousel-card {
+  /* Remove width and max-width to use standard-card */
+  background-color: #ffffff;
+  padding: 3rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align to the left like other cards */
+  justify-content: center;
+  text-align: left; /* Align text to the left */
+  color: #000000;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 900px) {
+  .carousel-card {
+    width: 90%; /* Wider width on mobile */
+    padding: 2rem;
+  }
+}
+
+.carousel-title {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  color: #000000;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+}
+
+.carousel-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #333333;
+}
+
+/* Styles for the CTA of the carousel */
+.carousel-card .action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000000;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.carousel-card .action-button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  transition: width 0.3s ease;
+  opacity: 0;
+}
+
+.carousel-card .action-button:hover {
+  color: #000000;
+  opacity: 0.85;
+}
+
+.carousel-card .action-button:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+.carousel-card .action-button-arrow {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+.carousel-card .action-button:hover .action-button-arrow {
+  transform: translateX(4px);
+}
+
+/* Carousel Controls */
+.carousel-controls {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  z-index: 10;
+}
+
+.carousel-arrow {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Ensure they are perfectly round */
+  display: block;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.carousel-indicator.active {
+  background-color: white;
+  transform: scale(1.2);
+  width: 8px;
+  height: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-slides {
+    height: 100vh;
+  }
+  
+  .carousel-content {
+    margin-left: 5%;
+    max-width: 90%;
+  }
+  
+  .carousel-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-slides {
+    height: 100vh;
+  }
+  
+  .carousel-content h2 {
+    font-size: 1.75rem;
+  }
+  
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-controls {
+    gap: 16px;
+  }
+}

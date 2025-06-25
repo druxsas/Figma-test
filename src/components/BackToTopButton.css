@@ -1,0 +1,75 @@
+.back-to-top-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.3s ease, visibility 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, bottom 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  z-index: 1000;
+}
+
+.back-to-top-button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-button.near-footer {
+  bottom: 10rem; /* Subtly increased from 8rem to 10rem for more distance from footer */
+}
+
+.back-to-top-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.back-to-top-button.near-footer:hover {
+  transform: translateY(-2px);
+}
+
+.back-to-top-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-top-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.back-to-top-button:hover .back-to-top-icon {
+  color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .back-to-top-button {
+    width: 3rem;
+    height: 3rem;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+  
+  .back-to-top-button.near-footer {
+    bottom: 7.5rem; /* Subtly increased from 6rem to 7.5rem for more distance from footer on mobile devices */
+  }
+  
+  .back-to-top-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

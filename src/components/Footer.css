@@ -1,0 +1,138 @@
+/* Footer.css */
+.footer {
+  width: 100%;
+  background-color: #000000;
+  padding: 16px 0;
+  font-family: 'Inter', sans-serif;
+  color: #FFFFFF;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Top row */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-logo img {
+  width: 32px;
+  height: 32px;
+}
+
+.footer-logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.footer-nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 24px;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 4px 0;
+  position: relative;
+  transition: opacity 0.2s ease;
+}
+
+.footer-nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.footer-nav ul li a:hover {
+  opacity: 0.9;
+  color: #ffffff;
+}
+
+.footer-nav ul li a:hover::after {
+  width: 100%;
+  opacity: 1;
+}
+
+/* Divider line */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 8px 0;
+}
+
+/* Bottom row */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.footer-copyright p {
+  font-size: 14px;
+  color: #FFFFFF;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  transition: opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .footer-nav ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .footer-social {
+    margin-top: 8px;
+  }
+}
