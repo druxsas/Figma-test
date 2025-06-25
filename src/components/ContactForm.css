@@ -261,6 +261,24 @@
   display: inline-block;
 }
 
+/* Styles for the preview environment notice */
+.preview-environment-notice {
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 4px;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+}
+
+.preview-environment-notice p {
+  color: #0369a1;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
 /* Styles for the submission status messages */
 .submit-status {
   margin: 0 0 16px 0;
@@ -280,6 +298,31 @@
   background-color: #fef2f2;
   color: #b91c1c;
   border: 1px solid #fee2e2;
+}
+
+/* reCAPTCHA Badge Styling - Ocultarlo */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+/* Estilos para el texto informativo de reCAPTCHA */
+.recaptcha-info {
+  font-size: 12px;
+  color: #6B7280;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Show reCAPTCHA compliance text using CSS content */
+.form-bottom-section::after {
+  content: "This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.";
+  display: block;
+  font-size: 12px;
+  color: #6B7280;
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Responsive */
