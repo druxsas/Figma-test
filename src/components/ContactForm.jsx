@@ -508,7 +508,8 @@ const ContactFormContentPreview = () => {
 const ContactForm = () => {
   // Check if we're in a production or development environment where reCAPTCHA is allowed
   const hostname = window.location.hostname;
-  const isAllowedDomain = hostname === 'figma-test.vercel.app' || hostname === 'localhost';
+  // Allow all vercel.app domains (production) and localhost (development)
+  const isAllowedDomain = hostname.includes('vercel.app') || hostname === 'localhost';
   
   // Site key for reCAPTCHA v3
   const RECAPTCHA_SITE_KEY = "6LeXum0rAAAAAPYdYTITa_Eq7J3Jc6NLnLjUQZVq"; // Site key for reCAPTCHA v3
