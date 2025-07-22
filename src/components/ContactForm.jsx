@@ -49,9 +49,9 @@ const ContactFormContent = () => {
         }
         break;
       case 'phoneNumber':
-        // USA format: (xxx) xxx-xxxx or xxx-xxx-xxxx
-        if (!/^\(\d{3}\)\s?\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$/.test(value)) {
-          errorMsg = 'Use format (XXX) XXX-XXXX or XXX-XXX-XXXX';
+        // Only allow numbers (digits)
+        if (!/^\d+$/.test(value)) {
+          errorMsg = 'Only numbers are allowed';
         }
         break;
       default:
@@ -323,9 +323,9 @@ const ContactFormContentPreview = () => {
         }
         break;
       case 'phoneNumber':
-        // USA format: (xxx) xxx-xxxx or xxx-xxx-xxxx
-        if (!/^\(\d{3}\)\s?\d{3}-\d{4}$|^\d{3}-\d{3}-\d{4}$/.test(value)) {
-          errorMsg = 'Use format (XXX) XXX-XXXX or XXX-XXX-XXXX';
+        // Only allow numbers (digits)
+        if (!/^\d+$/.test(value)) {
+          errorMsg = 'Only numbers are allowed';
         }
         break;
       default:
