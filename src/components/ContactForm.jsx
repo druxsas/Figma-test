@@ -223,7 +223,7 @@ const ContactFormContent = () => {
                     type="tel"
                     id="phoneNumber"
                     name="phoneNumber"
-                    placeholder="(123) 456-7890"
+                    placeholder="Enter your phone number"
                     value={formData.phoneNumber}
                     onChange={handleChange}
                     required
@@ -452,7 +452,7 @@ const ContactFormContentPreview = () => {
                     type="tel"
                     id="phoneNumber"
                     name="phoneNumber"
-                    placeholder="(123) 456-7890"
+                    placeholder="Enter your phone number"
                     value={formData.phoneNumber}
                     onChange={handleChange}
                     required
